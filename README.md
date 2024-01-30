@@ -53,3 +53,8 @@ Deployment:
 For production use, consider deploying the Flask application on a server.
 Conclusion:
 This Crop Recommendation System combines machine learning with a user-friendly web interface, providing a practical tool for recommending crops based on environmental conditions. Adjustments and further enhancements can be made based on specific requirements and user feedback.
+
+<img width="1440" alt="Screenshot 2024-01-30 at 7 23 46 PM" src="https://github.com/rishabha123/CropPrediction/assets/107122762/ace79909-04fe-423d-b78a-1f9c73d4b96d">
+
+
+
