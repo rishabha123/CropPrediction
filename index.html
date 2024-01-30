@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crop Recommendation System</title>
+
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        form {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+            text-align: center;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0 5px;
+            color: #555;
+        }
+
+        input {
+            width: calc(100% - 22px);
+            padding: 8px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        p {
+            margin-top: 20px;
+            text-align: center;
+            color: #4caf50;
+        }
+        .container{
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width:874px;
+            height:686px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Crop Recommendation System</h1>
+    <div class="container">
+    <form method="post" action="{{ url_for('predict') }}">
+        <label for="N">Nitrogen Content:</label>
+        <input type="text" name="N" id="N" required>
+
+        <label for="P">Phosphorus Content:</label>
+        <input type="text" name="P" id="P" required>
+
+        <label for="K">Potassium Content:</label>
+        <input type="text" name="K" id="K" required>
+
+        <label for="temperature">Temperature (°C):</label>
+        <input type="text" name="temperature" id="temperature" required>
+
+        <label for="humidity">Humidity (%):</label>
+        <input type="text" name="humidity" id="humidity" required>
+
+        <label for="ph">Soil pH:</label>
+        <input type="text" name="ph" id="ph" required>
+
+        <label for="rainfall">Rainfall (mm):</label>
+        <input type="text" name="rainfall" id="rainfall" required>
+
+        <button type="submit">Predict</button>
+    </form>
+</div>
+
+     {% if prediction_text %}
+        <p>{{ prediction_text }}</p>
+    {% endif %}
+</body>
+</html>
